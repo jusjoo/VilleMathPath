@@ -1,0 +1,7 @@
+.example-bg {
+	background: #c0deed url(img/bg.png) center center repeat-x;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;		
+}

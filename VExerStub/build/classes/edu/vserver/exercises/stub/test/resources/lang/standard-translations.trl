@@ -1,0 +1,107 @@
+﻿@key:TYPE_SUBMISSION_VIEWER_NOT_IMPLEMENTED
+@en:Submission viewer is not implemented for this exercise type
+@fi:Palautuksen visualisoijaa ei ole toteutettu tälle tehtävätyypille
+
+@key:TYPE_SUBMISSION_EXPORT_NOT_IMPLEMENTED
+@en:Submission export is not implemented for this exercise type
+@fi:Palautuksen muuntamista tekstiksi ei ole toteutettu tälle tehtävätyypille
+
+@key:TYPE_SUBMISSION_STATISTICS_GIVER_NOT_IMPL
+@en:Submission statistics viewer is not implemented for this exercise type
+@fi:Palautusten tilasto-analysoijaa ei ole toteutettu tälle tehtävätyypille
+
+@key:SAVE
+@en:Save
+@fi:Tallenna
+
+@key:EXPAND_SHRINK_DESCRIPTION
+@en:Expand / shrink assignment description area
+@fi:Laajenna / pienennä tehtävänkuvauksen aluetta
+
+@key:SUBMIT
+@en:Submit
+@fi:Lähetä
+
+@key:RESET
+@en:Reset
+@fi:Nollaa
+
+@key:SUBMISSION
+@en:submission
+@fi:palautus
+
+@key:TEST
+@en:Test
+@fi:Testaa
+
+@key:RESULT
+@en:Result
+@fi:Tulos
+
+@key:BACK_TO_STUB_START
+@en:Back to stub start
+@fi:Takaisin tyngän alkunäkymään
+
+@key:NEXT
+@en:Next
+@fi:Seuraava
+
+@key:PREVIOUS
+@en:Previous
+@fi:Edellinen
+
+@key:STEP
+@en:Step
+@fi:Vaihe
+
+@key:DELETE
+@en:Delete
+@fi:Poista
+
+@key:ERROR_IN_UPLOAD
+@en:There was an error in upload, please try again!
+@fi:Tiedoston vastaanottamisessa tapahtui virhe, yritä uudestaan!
+
+@key:NOTIFICATION_UPLOADING_FILE
+@en:Uploading file, please wait a moment...
+@fi:Lähetetään tiedostoa, odota hetki...
+
+@key:ERROR_FILE_TOO_LARGE
+@en:File size is too big! Maximum size is @0 kb.
+@fi:Tiedosto on liian suuri. Maksimikoko on @0 kb.
+
+@key:UPLOAD
+@en:Upload
+@fi:Tiedoston lähetys
+
+@key:UPLOAD_ERROR_WRONG_FILE_TYPE
+@en:Error in upload: Wrong file type.
+@fi:Virhe tiedoston vastaanottamisessa: väärä tiedostotyyppi.
+
+@key:ANSWER
+@en:Answer
+@fi:Vastaus
+
+@key:CORRECT
+@en:Correct
+@fi:Oikein
+
+@key:PREVIEW
+@en:Preview
+@fi:Esikatselu
+
+@key:EXERCISE_LOAD_ERROR
+@en:Could not load the exercise
+@fi:Tehtävää ei pystytty lataamaan
+
+@key:TIME
+@en:Time
+@fi:Aika
+
+@key:ADD
+@en:Add
+@fi:Lisää
+
+@key:CLOSE
+@en:Close
+@fi:Sulje

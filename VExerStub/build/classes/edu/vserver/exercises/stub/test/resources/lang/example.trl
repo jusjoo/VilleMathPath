@@ -1,0 +1,19 @@
+@key:EDITOR_CORRECT_ANSWER_CAPTION
+@en:Edit correct answers
+@fi:Muokkaa oikeita vastauksia
+
+@key:EDITOR_WRONG_ANSWER_CAPTION
+@en:Edit wrong answers
+@fi:Muokkaa vääriä vastauksia
+
+@key:EDITOR_QUESTION_TEXT_CAPTION
+@en:Edit the question
+@fi:Muokkaa kysymystä
+
+@key:QUESTION_PICTURE_UPLOAD_CAPTION
+@en:Upload a picture for the question
+@fi:Lataa kuva kysymykselle
+
+@key:NAME
+@en:Example-Exercise
+@fi:Esimerkki-Tehtävä
