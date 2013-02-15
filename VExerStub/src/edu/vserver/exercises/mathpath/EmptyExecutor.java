@@ -15,10 +15,13 @@ public class EmptyExecutor extends RealSimpleExerciseExecutor {
 	private static final long serialVersionUID = 645228793345434162L;
 
 	private double score = 0.0;
+	private PathModel path;
 
 	@Override
 	protected void doLayout() {
 		this.addComponent(new Label("Empty-Executor"));
+		
+		path = new PathModel(5, 15, 5);
 		
 		Button pushThis = new Button("push this");
 		
@@ -26,7 +29,14 @@ public class EmptyExecutor extends RealSimpleExerciseExecutor {
 			private static final long serialVersionUID = 2906960442004272295L;
 
 			public void buttonClick(ClickEvent event) {
-				Notification.show("Bravo!");
+				
+				StringBuffer result = new StringBuffer("Correct answers: ");
+				
+				for (int i=0; i < path.getLength(); i++) {
+					result.append(path.getNode(i) + ", ");
+				}
+								
+				Notification.show(result.toString());
 				score = 1.0;
 			}
 		});
