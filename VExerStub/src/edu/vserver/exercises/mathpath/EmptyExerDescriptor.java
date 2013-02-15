@@ -1,4 +1,4 @@
-package edu.vserver.exercises.yourexerciseid;
+package edu.vserver.exercises.mathpath;
 
 import edu.vserver.exercises.helpers.ExerTypeVoidImplCollection.NoDataExerciseDescriptor;
 import edu.vserver.exercises.helpers.ExerTypeVoidImplCollection.VoidExerciseData;
