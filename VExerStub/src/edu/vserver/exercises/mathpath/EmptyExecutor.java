@@ -16,32 +16,36 @@ public class EmptyExecutor extends RealSimpleExerciseExecutor {
 
 	private double score = 0.0;
 	private PathModel path;
+	private ArithmeticsInterface calc;
 
 	@Override
 	protected void doLayout() {
 		this.addComponent(new Label("Empty-Executor"));
-		
+
 		path = new PathModel(5, 15, 5);
-		
+		calc = new AdditionGenerator();
+
 		Button pushThis = new Button("push this");
-		
-		pushThis.addClickListener(new Button.ClickListener() {	
+
+		pushThis.addClickListener(new Button.ClickListener() {
 			private static final long serialVersionUID = 2906960442004272295L;
 
+			@Override
 			public void buttonClick(ClickEvent event) {
-				
+
 				StringBuffer result = new StringBuffer("Correct answers: ");
-				
-				for (int i=0; i < path.getLength(); i++) {
-					result.append(path.getNode(i) + ", ");
+
+				for (int i = 0; i < path.getLength(); i++) {
+					result.append(calc.calculate(path.getNode(i)) + " = "
+							+ path.getNode(i) + "; ");
 				}
-								
+
 				Notification.show(result.toString());
 				score = 1.0;
 			}
 		});
-		
-		 this.addComponent(pushThis);
+
+		this.addComponent(pushThis);
 	}
 
 	@Override
