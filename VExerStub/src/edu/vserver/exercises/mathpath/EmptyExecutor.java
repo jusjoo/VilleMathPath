@@ -1,6 +1,8 @@
 package edu.vserver.exercises.mathpath;
 
+import com.vaadin.shared.ui.AlignmentInfo.Bits;
 import com.vaadin.ui.AbsoluteLayout;
+import com.vaadin.ui.Alignment;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.Button.ClickEvent;
 import com.vaadin.ui.Label;
@@ -61,6 +63,11 @@ public class EmptyExecutor extends RealSimpleExerciseExecutor {
 		verticalLayout.addComponent(label2);
 		
 		this.addComponent(verticalLayout);
+		
+		// this centers the whole thing
+		setComponentAlignment(verticalLayout, 
+		          new Alignment(Bits.ALIGNMENT_VERTICAL_CENTER |
+		                        Bits.ALIGNMENT_HORIZONTAL_CENTER));
 	}
 
 	@Override
