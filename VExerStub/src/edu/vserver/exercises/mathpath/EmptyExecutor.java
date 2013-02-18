@@ -1,9 +1,12 @@
 package edu.vserver.exercises.mathpath;
 
+import com.vaadin.ui.AbsoluteLayout;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.Button.ClickEvent;
 import com.vaadin.ui.Label;
+import com.vaadin.ui.Layout;
 import com.vaadin.ui.Notification;
+import com.vaadin.ui.VerticalLayout;
 
 import edu.vserver.exercises.helpers.ExerTypeVoidImplCollection.RealSimpleExerciseExecutor;
 
@@ -16,17 +19,23 @@ public class EmptyExecutor extends RealSimpleExerciseExecutor {
 
 	private double score = 0.0;
 	private PathModel path;
+	private PathLayout pathLayout;
 	private ArithmeticsInterface calc;
 
 	@Override
 	protected void doLayout() {
-		this.addComponent(new Label("Empty-Executor"));
+		
 
 		path = new PathModel(5, 15, 5);
 		calc = new AdditionGenerator();
 
-		Button pushThis = new Button("push this");
-
+		VerticalLayout verticalLayout = new VerticalLayout();
+			
+		Button pushThis = new Button("push this");	
+		pathLayout = new PathLayout();	
+		Label label2 = new Label("tähän tulee alalaita");
+		
+		
 		pushThis.addClickListener(new Button.ClickListener() {
 			private static final long serialVersionUID = 2906960442004272295L;
 
@@ -40,12 +49,18 @@ public class EmptyExecutor extends RealSimpleExerciseExecutor {
 							+ path.getNode(i) + "; ");
 				}
 
-				Notification.show(result.toString());
+				pathLayout.changeData(result.toString());
 				score = 1.0;
 			}
 		});
-
-		this.addComponent(pushThis);
+		
+		verticalLayout.setWidth("90%");
+		
+		verticalLayout.addComponent(pushThis);
+		verticalLayout.addComponent(pathLayout);
+		verticalLayout.addComponent(label2);
+		
+		this.addComponent(verticalLayout);
 	}
 
 	@Override
