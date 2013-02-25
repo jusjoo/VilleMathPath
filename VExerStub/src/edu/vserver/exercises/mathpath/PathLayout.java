@@ -4,7 +4,9 @@ import java.util.ArrayList;
 
 import com.vaadin.ui.AbsoluteLayout;
 import com.vaadin.ui.Button;
+import com.vaadin.ui.Button.ClickListener;
 import com.vaadin.ui.Label;
+import com.vaadin.ui.Button.ClickEvent;
 
 public class PathLayout extends AbsoluteLayout {
 
@@ -24,10 +26,7 @@ public class PathLayout extends AbsoluteLayout {
 	    
 	    
 	    Button b1 = new Button("9");
-	    addOption("2 + 2");
-	    addOption("3 + 3");
-	    addOption("4 + 4");
-	    addOption("5 + 5");
+
 	    
 	    
 	    
@@ -42,7 +41,23 @@ public class PathLayout extends AbsoluteLayout {
 	}
 	
 	public void addOption(String string) {
-		currentOptions.add(new Button(string));
+		Button b = new Button(string);
+		
+		// add a click listener for the new option
+		b.addClickListener(new ClickListener() {
+			@Override
+			public void buttonClick(ClickEvent event) {
+				// currently just removes the clicked option
+				removeOption(event.getButton());	
+			}
+		});
+		currentOptions.add(b);
+		updatePositions();
+	}
+	
+	public void removeOption(Button b){
+		removeComponent(b);
+		currentOptions.remove(b);
 		updatePositions();
 	}
 	
