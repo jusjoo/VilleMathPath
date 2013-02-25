@@ -52,6 +52,7 @@ public class EmptyExecutor extends RealSimpleExerciseExecutor {
 				}
 
 				pathLayout.changeData(result.toString());
+				pathLayout.addOption(calc.calculate(path.getNode(1)));
 				score = 1.0;
 			}
 		});
