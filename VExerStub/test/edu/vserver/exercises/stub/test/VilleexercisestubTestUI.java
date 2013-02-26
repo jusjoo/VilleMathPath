@@ -4,10 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 import edu.vserver.exercises.example.ExampleTypeDescriptor;
+import edu.vserver.exercises.mathpath.EmptyExerDescriptor;
 import edu.vserver.exercises.model.ExerciseTypeDescriptor;
 import edu.vserver.exercises.stub.AbstractExerStubUI;
 import edu.vserver.exercises.template.TemplateTypeDescriptor;
-import edu.vserver.exercises.yourexerciseid.EmptyExerDescriptor;
 
 public class VilleexercisestubTestUI extends AbstractExerStubUI {
 
