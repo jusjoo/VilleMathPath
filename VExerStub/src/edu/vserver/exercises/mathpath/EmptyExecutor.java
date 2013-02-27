@@ -11,6 +11,9 @@ import edu.vserver.exercises.helpers.ExerTypeVoidImplCollection.RealSimpleExerci
 
 public class EmptyExecutor extends RealSimpleExerciseExecutor {
 
+    /**
+	 * 
+	 */
     private static final long serialVersionUID = 645228793345434162L;
 
     private double score = 0.0;
@@ -28,18 +31,23 @@ public class EmptyExecutor extends RealSimpleExerciseExecutor {
 
         Button pushThis = new Button("push this");
         pathLayout = new PathLayout();
-
         Label label2 = new Label("t�h�n tulee alalaita");
-
-        generateRiddles();
 
         pushThis.addClickListener(new Button.ClickListener() {
             private static final long serialVersionUID = 2906960442004272295L;
 
             @Override
             public void buttonClick(ClickEvent event) {
-                path.generateNewAnswers();
-                generateRiddles();
+
+                StringBuffer result = new StringBuffer("Correct answers: ");
+
+                for (int i = 0; i < path.getLength(); i++) {
+                    result.append(calc.calculate(path.getNode(i)) + " = "
+                            + path.getNode(i) + "; ");
+                }
+
+                pathLayout.changeData(result.toString());
+                pathLayout.addOption(calc.calculate(path.getNode(1)));
                 score = 1.0;
             }
         });
@@ -56,18 +64,6 @@ public class EmptyExecutor extends RealSimpleExerciseExecutor {
         setComponentAlignment(verticalLayout, new Alignment(
                 Bits.ALIGNMENT_VERTICAL_CENTER
                         | Bits.ALIGNMENT_HORIZONTAL_CENTER));
-    }
-
-    private void generateRiddles() {
-        pathLayout.clearOptions();
-        pathLayout.setMiddleCaption("" + path.getCorrectAnswer());
-        for (int i = 0; i < path.getLength(); i++) {
-            String riddle = calc.calculate(path.getOption(i));
-            pathLayout.addOption(riddle);
-            if (path.getCorrectAnswer() == path.getOption(i)) {
-                pathLayout.setCorrectOption(riddle);
-            }
-        }
     }
 
     @Override
