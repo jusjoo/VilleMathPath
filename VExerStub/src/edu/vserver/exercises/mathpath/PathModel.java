@@ -1,6 +1,7 @@
 package edu.vserver.exercises.mathpath;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Random;
 
 public class PathModel {
@@ -30,7 +31,7 @@ public class PathModel {
         list.add(correctAnswer);
         generateWrongAnswers(correctAnswer);
 
-        // TODO: shuffle order
+        Collections.shuffle(list);
     }
 
     private void generateWrongAnswers(int correctAnswer) {
