@@ -5,34 +5,60 @@ import java.util.Random;
 
 public class PathModel {
 
-	private ArrayList<Integer> list;
-	
-	/*
-	 * Luo uuden correctpathmodelin, joka generoi oikeat vastaukset min-max väliltä
-	 * 
-	 * length: polun pituus
-	 */
-	public PathModel(int min, int max, int length) {
-		list = new ArrayList<Integer>();
-		generateAnswers(min, max, length);
-	}
+    private ArrayList<Integer> list;
 
-	private void generateAnswers(int min, int max, int length) {
-		
-		Random rnd = new Random();	
-		for (int i=0; i < length; i++) {
-			
-			int answer = rnd.nextInt(max-min+1) + min;
-			list.add(i, answer);		
-		}	
-	}
-	
-	public int getNode(int index) {
-		return list.get(index);
-	}
-	
-	public int getLength() {
-		return list.size();
-	}
+    private int min, max, amountOfOptions;
+
+    private int correctAnswer;
+
+    private static Random rnd = new Random();
+
+    /*
+     * @.pre amountOfOptions > 0
+     */
+    public PathModel(int min, int max, int amountOfOptions) {
+        list = new ArrayList<Integer>();
+        this.min = min;
+        this.max = max;
+        this.amountOfOptions = amountOfOptions;
+        generateAnswers();
+
+    }
+
+    private void generateAnswers() {
+        correctAnswer = rnd.nextInt(max - min + 1) + min;
+        list.add(correctAnswer);
+        generateWrongAnswers(correctAnswer);
+
+        // TODO: shuffle order
+    }
+
+    private void generateWrongAnswers(int correctAnswer) {
+
+        while (list.size() < amountOfOptions) {
+            int wrongAnswer = rnd.nextInt(max - min + 1) + min;
+            if (wrongAnswer != correctAnswer) {
+                list.add(wrongAnswer);
+            }
+        }
+    }
+
+    public int getOption(int i) {
+        return list.get(i);
+    }
+
+    public int getLength() {
+        return list.size();
+    }
+
+    public int getCorrectAnswer() {
+        return correctAnswer;
+    }
+
+    public void generateNewAnswers() {
+        list.clear();
+
+        generateAnswers();
+    }
 
 }
